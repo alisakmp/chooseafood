@@ -1,0 +1,78 @@
+<html>
+  <head>
+
+      <title>Choose a Food!</title>
+      <style>
+      h1{
+          font-size: 50px;
+          color: #781234;
+      }
+      hr{
+            border: 3px dashed #906712
+      }
+      body{
+        background-color: #ffccff	;
+        opacity: 0.5;
+      }
+
+      </style>
+	  <script>
+       function ageCheck()
+       {
+	    var age = document.getElementById("byear").value;
+	    age = parseInt (age);
+        if(age < 10)
+		{		
+		    revealYouthOp();
+		}
+	    else
+	    {
+		  revealAdultOp();
+	    }
+	   }
+	   
+	    function revealAdultOp()
+	   {
+	    document.getElementById ('pic2').innerHTML = "<img src = 'steakandpotaoes.jpg' onclick = 'mediumHealthy()'>";
+		document.getElementById ('pic3').innerHTML = "<img src = 'donuts.jpg' onclick = 'notHealthy()'>";
+		document.getElementById ('pic1').innerHTML = "<img src = 'chickensalad.jpg' onclick = 'healthy()'>";
+		}
+        
+	
+	  function revealYouthOp()
+      {
+        document.getElementById ('pic2').innerHTML = "<img src = 'chickennuggets.jpg' onclick = 'mediumHealthy()'>";
+		document.getElementById ('pic3').innerHTML = "<img src = 'snackles.jpg' onclick = 'notHealthy()'>";
+		document.getElementById ('pic1').innerHTML = "<img src = 'apples.jpg' onclick = 'healthy()' >";
+      }
+	  
+	  function healthy()
+	  {
+	    document.getElementById ('mess').innerHTML = "This is Healthy";
+	  }
+	  
+	  function notHealthy()
+	  {
+	     document.getElementById ('mess').innerHTML = "This is NOT Healthy";
+	  }
+	  function mediumHealthy ()
+	  {
+		document.getElementById ('mess').innerHTML = "This is moderately Healthy";
+	  }
+    </script>
+  </head>
+
+<body>
+  <h1>Choose Your Food</h1>
+  <p> How Old Are You?</p>
+
+      <input type = "text" value = "Type Birth Year" id = "byear">
+      <input type = "button" value = "Okay" onclick = "ageCheck()">
+        <p id = "pic1"></p>
+        <p id = "pic2"></p>
+        <p id = "pic3"></p>
+		
+		<p id = "mess"></p>
+        
+  </body>
+</html>
